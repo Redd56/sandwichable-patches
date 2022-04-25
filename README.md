@@ -1,9 +1,9 @@
-# Fabric Example Mod
+# Sandwichable Patches
 
-## Setup
+## WAT??
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+Adds cutting boards for each and every fabric mod that adds wood that I can find
 
-## License
+## But why?.....
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Because mod interoperability
