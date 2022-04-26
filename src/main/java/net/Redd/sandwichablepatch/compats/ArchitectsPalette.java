@@ -33,5 +33,6 @@ public class ArchitectsPalette {
                 JResult.itemStack(TWISTED_CUTTING_BOARD.asItem(),2)
         ));
 
+
     }
 }
