@@ -10,6 +10,17 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+
+//why
+static String terraformers() {
+	def url = "https://maven.terraformersmc.com/"
+	def conn = new URL(url).openConnection()
+	conn.connect()
+	url = conn.getResponseCode() == 521 ? "https://raw.githubusercontent.com/TerraformersMC/Archive/main/releases" : url
+	return url
+}
+
+
 repositories {
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
@@ -17,6 +28,11 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	 maven { url "https://api.modrinth.com/maven" }
+	maven {url = uri("https://storage.googleapis.com/devan-maven/")}
+
+	//just why
+	maven { url = "https://maven.gegy.dev" }
+	maven { url = terraformers() }
 }
 
 dependencies {
@@ -27,7 +43,17 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	//base mod
 	modImplementation "maven.modrinth:sandwichable:1.2+1.18.2"
+
+	//in runtime resources, like recipies
+	modImplementation("net.devtech:arrp:0.+")
+	include("net.devtech:arrp:0.+")
+
+	//please, just answer me why
+	modImplementation "dev.lambdaurora:spruceui:${project.spruceui_version}"
+	include "dev.lambdaurora:spruceui:${project.spruceui_version}"
 }
 
 processResources {
