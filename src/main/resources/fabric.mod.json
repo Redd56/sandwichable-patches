@@ -28,8 +28,5 @@
     "minecraft": "1.18.x",
     "java": ">=17",
     "sandwichable": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
